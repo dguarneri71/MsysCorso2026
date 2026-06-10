@@ -1,4 +1,4 @@
-## 📜 Come usare npm scripts con Heft in SPFx
+## Come usare npm scripts con Heft in SPFx
 
 Gli **npm scripts** sono comandi personalizzati definiti nel file `package.json` del tuo progetto. Ti permettono di eseguire istruzioni complesse (come i comandi Heft) con semplici alias come `npm start`, senza dover ricordare flag o percorsi.
 
