@@ -1,10 +1,10 @@
 In un progetto **SPFx v1.22.2** (che utilizza il nuovo motore di build Heft), il file `config/rig.json` è il punto di collegamento a un pacchetto NPM esterno, chiamato "rig", che contiene tutte le regole di build predefinite per SharePoint Framework.
 
-## 🤔 A Cosa Serve: Il Concetto di "Rig"
+## Il Concetto di "Rig"
 
 Un "Rig" (dall'inglese "impalcatura") è un pacchetto NPM che fornisce una configurazione di build standardizzata, riutilizzabile e manutenuta centralmente. In precedenza, questa logica era contenuta nel file `gulpfile.js`, il che portava a duplicazione di codice, potenziali conflitti e maggiore complessità negli aggiornamenti. Con il nuovo approccio, il progetto "eredita" l'intera pipeline di build dalla rig, eliminando la necessità di configurazioni manuali complesse e rendendo gli aggiornamenti delle dipendenze più puliti e sicuri.
 
-## ⚙️ Cosa Posso Fare: Contenuto e Operatività
+## Cosa Posso Fare: Contenuto e Operatività
 
 Il file `rig.json` è tipicamente molto semplice, con pochi campi chiave che puntano alla configurazione esterna.
 
@@ -29,7 +29,7 @@ Quando esegui un comando come `npm run build`, il processo che si attiva è il s
 2.  **Caricamento della "Rig"**: Individua e carica il pacchetto NPM specificato, che in SPFx v1.22.2 è `@microsoft/spfx-web-build-rig`.
 3.  **Esecuzione della Pipeline**: Utilizza le definizioni contenute nella rig per eseguire la pipeline di build completa: compilazione TypeScript, bundling con Webpack, compilazione SCSS, elaborazione delle localizzazioni, generazione dei manifest e creazione del pacchetto `.sppkg`.
 
-## 🛠️ Cosa Posso Fare: Personalizzare il Comportamento di Build
+## Cosa Posso Fare: Personalizzare il Comportamento di Build
 
 Anche se si eredita una configurazione standard, ci sono diversi modi per personalizzarla:
 
