@@ -1,4 +1,4 @@
-## 📦 Cos'è Heft e perché Microsoft lo ha scelto
+## Cos'è Heft e perché Microsoft lo ha scelto
 
 Heft (il cui nome completo è **Rush Stack Heft**) è un orchestratore di build moderno, configurabile a file JSON, sviluppato da Microsoft all'interno dell'ecosistema **Rush Stack**. Con il rilascio di **SPFx v1.22 (dicembre 2025)**, Microsoft lo ha reso il sistema di build predefinito per tutti i nuovi progetti al posto del precedente toolchain basato su Gulp.
 
@@ -8,11 +8,11 @@ La transizione risponde a diverse esigenze accumulate nel tempo:
 *   **"Scatola nera"** – molti passaggi del build erano oscurati, rendendo difficile la personalizzazione e la manutenzione su progetti enterprise di grandi dimensioni.
 *   **Allineamento interno** – Microsoft stessa utilizzava Heft internamente da tempo; il passaggio unifica l'esperienza di sviluppo tra Microsoft, ISV e sviluppatori indipendenti, accelerando il delivery di nuove funzionalità.
 
-> ⚠️ **Nota importante**: Il bundling sottostante rimane **Webpack**. Quello che cambia è l'orchestratore che gestisce la sequenza delle operazioni di build (compilazione TypeScript, linting, test, bundle e packaging).
+> **Nota importante**: Il bundling sottostante rimane **Webpack**. Quello che cambia è l'orchestratore che gestisce la sequenza delle operazioni di build (compilazione TypeScript, linting, test, bundle e packaging).
 
 ---
 
-## 🚀 Come Heft può esserti utile nei tuoi progetti SPFx
+## Come Heft può esserti utile nei tuoi progetti SPFx
 
 ### 1. Performance e scalabilità
 
@@ -69,7 +69,7 @@ Ecco un pratico esempio per copiare un file di licenza nella cartella della solu
 
 ---
 
-## 💡 Trucchi e best practice utili da sapere
+## Trucchi e best practice utili da sapere
 
 ### 1. Usa npm scripts per non memorizzare i flag di Heft
 
@@ -124,7 +124,7 @@ Se hai bisogno di modificare la configurazione di Webpack (es. aggiungere un plu
 
 Un comportamento importante da conoscere: **il linting non è attualmente supportato in watch mode**. Quando esegui `heft start` o `heft build-watch`, il task di linting non viene eseguito. Per testare il linting, devi eseguire un build esplicito senza watch.
 
-🛠️ **heft start vs heft build: Quale usare per testare il linting?**
+**heft start vs heft build: Quale usare per testare il linting?**
 
 La scelta tra i due comandi dipende dall'effetto desiderato:
 
@@ -154,7 +154,7 @@ Inoltre, dopo aver creato un link simbolico con `npm link`, ricordati di eseguir
 
 ---
 
-## 📋 Tabella riassuntiva: Gulp vs Heft
+## Tabella riassuntiva: Gulp vs Heft
 
 | Caratteristica | Gulp (SPFx v1.0–v1.21) | Heft (SPFx v1.22+) |
 |----------------|--------------------------|---------------------|
@@ -170,7 +170,7 @@ Inoltre, dopo aver creato un link simbolico con `npm link`, ricordati di eseguir
 
 ---
 
-## 🛠️ Comandi principali di Heft che devi conoscere
+## Comandi principali di Heft che devi conoscere
 
 | Azione | Comando Heft | Equivalente npm script |
 |--------|--------------|------------------------|
@@ -184,7 +184,7 @@ Nota: gli npm script `npm start` e `npm run build` sono preconfigurati nello sca
 
 ---
 
-## ⚠️ Problemi comuni e soluzioni rapide
+## Problemi comuni e soluzioni rapide
 
 | Problema | Soluzione |
 |----------|-----------|
@@ -197,7 +197,7 @@ Nota: gli npm script `npm start` e `npm run build` sono preconfigurati nello sca
 
 ---
 
-## 📚 Riferimenti utili per approfondire
+## Riferimenti utili per approfondire
 
 *   [Documentazione ufficiale della toolchain Heft in SPFx](https://learn.microsoft.com/sharepoint/dev/spfx/toolchain/sharepoint-framework-toolchain-rushstack-heft)
 *   [Migrazione da Gulp a Heft – guida passo-passo](https://learn.microsoft.com/sharepoint/dev/spfx/toolchain/migrate-gulptoolchain-hefttoolchain)
@@ -217,7 +217,7 @@ Il comando `heft eject-webpack` fa parte del toolchain di build **Heft**, usato 
 
 Ecco una panoramica dettagliata di cosa fa e delle sue implicazioni.
 
-### 🤔 Cosa significa "eject" la configurazione?
+### Cosa significa "eject" la configurazione?
 
 Per capire il comando, è utile sapere che, in un progetto SPFx standard, la configurazione del webpack è astratta e gestita internamente da Microsoft. Il comando `heft eject-webpack` rompe questa astrazione:
 
@@ -228,12 +228,12 @@ Per capire il comando, è utile sapere che, in un progetto SPFx standard, la con
 
 In sostanza, l'intera responsabilità della configurazione di webpack passa dal toolchain centralizzato a te, lo sviluppatore. È un'operazione **unidirezionale**: una volta eseguita, non è possibile tornare indietro facilmente senza ripristinare una versione precedente del progetto tramite un sistema di controllo versione (es. Git).
 
-### ⚠️ Cosa comporta e quando usarlo
+### Cosa comporta e quando usarlo
 
 *   **Implicazioni importanti**: Questa operazione ti dà il **controllo totale** sulla configurazione, ma ciò significa che tu diventi l'unico responsabile della sua manutenzione e del suo corretto funzionamento. Inoltre, Microsoft avverte che **non fornisce supporto ufficiale** per i progetti SPFx che hanno eseguito l'ejection.
 *   **Quando è utile**: L'ejection è consigliata solo quando le opzioni di personalizzazione standard (come i plugin integrati) risultano insufficienti per le tue esigenze specifiche.
 
-### 🤔 Alternative all'ejection
+### Alternative all'ejection
 
 Prima di scegliere questa strada, è sempre consigliabile valutare alternative meno invasive e più supportate.
 
